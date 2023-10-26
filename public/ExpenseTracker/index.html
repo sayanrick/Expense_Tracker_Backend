@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Expense Tracker App using JavaScript Local Storage</h1>
+      <form onsubmit="addNewExpense(event)">
+        <label>Choose Expense Amount:</label>
+        <input
+          type="text"
+          name="expenseamount"
+          id="expenseamountInputTag"
+          required
+        />
+        <br />
+        <label>Choose description:</label>
+        <input
+          type="text"
+          name="description"
+          id="descriptionInputTag"
+          required
+        />
+        <br />
+        <label>Choose A Category:</label>
+        <select name="category" id="categoryInputTag">
+          <option value="Fuel">Fuel</option>
+          <option value="Food">Food</option>
+          <option value="Electricity">Electricity</option>
+          <option value="Wifi">Wifi</option>
+          <option value="Movie">Movie</option>
+        </select>
+        <br />
+        <button type="submit">Add Expense</button>
+      </form>
+      <div id="message"></div>
+      <div id="leaderboard"></div>
+      <button id="rzp-button1">Buy Premium</button>
+      <button onclick="download()" id="downloadexpense">Download File</button>
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+      <ul id="listOfExpenses"></ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const https = require('https');
 const express = require("express");
 require("dotenv").config();
 const sequelize = require("./util/database");
@@ -29,6 +30,11 @@ app.use("/expense", expenseRoutes);
 app.use("/purchase", purchaseRoutes);
 app.use("/premium", premiumFeatureRoutes);
 app.use('/password', resetPasswordRoutes);
+
+app.use((req, res) => {
+  console.log('url ', req.url);
+  res.sendFile(path.join(__dirname, `public/${req.url}`));
+});
 
 // Specify your desired log directory
 const logDirectory = path.join(__dirname, 'logs');
